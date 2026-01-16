@@ -1,0 +1,19 @@
+# Ignore Codex CLI session logs and artifacts
+sessions/**
+# Doc
+doc/
+
+# ignore everything under .codex
+.codex/**
+
+# re-allow directory traversal
+!.codex/
+!.codex/skills/
+!.codex/skills/**
+!.codex/prompts/
+!.codex/prompts/**
+!.codex/rules/
+!.codex/rules/**
+!.codex/.agent/
+!.codex/.agent/**
+!.codex/AGENTS.md
