@@ -18,6 +18,15 @@ The Codex agent catalog and skills live under `.codex/`.
   rules, and config. See `.codex/README.md` for the catalog.
 - `AGENTS.md`: Operating rules for modifying the agent catalog.
   Read this before making changes.
+- `scripts/`: Helper utilities for local setup.
+
+## Quick Setup
+
+Link Codex assets into `~/.codex`:
+
+```sh
+scripts/link-codex.sh
+```
 
 ## Notes
 
