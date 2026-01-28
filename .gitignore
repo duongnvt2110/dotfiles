@@ -16,4 +16,6 @@ doc/
 !.codex/rules/**
 !.codex/.agent/
 !.codex/.agent/**
+!.codex/policy
+!.codex/policy/**
 !.codex/AGENTS.md
