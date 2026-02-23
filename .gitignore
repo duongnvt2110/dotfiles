@@ -19,3 +19,4 @@ doc/
 !.codex/policy
 !.codex/policy/**
 !.codex/AGENTS.md
+!.codex/config.toml
