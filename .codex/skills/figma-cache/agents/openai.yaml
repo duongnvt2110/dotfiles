@@ -1,0 +1,14 @@
+interface:
+  display_name: "Figma (Cache-First)"
+  short_description: "Figma MCP with cache-first workflow and 429 asset fallback"
+  icon_small: "./assets/figma-small.svg"
+  icon_large: "./assets/figma.png"
+  default_prompt: "Use Figma MCP in cache-first mode to extract design context and assets; if MCP asset downloads hit 429, export missing assets via agent-browser."
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "figma"
+      description: "Figma MCP server"
+      transport: "streamable_http"
+      url: "https://mcp.figma.com/mcp"
