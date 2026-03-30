@@ -60,6 +60,19 @@ material; final deliverables must be standalone files, not chat posts.
      In the first case, add supplementary research; in the second, expand and polish the
      existing material until it meets the detail standard.
 
+## RFC Evidence Handoff (for `rfc-writer`)
+
+When called by `rfc-writer`, deliver an RFC evidence package in addition to the
+full report:
+
+- Traceable evidence summary grouped by decision dimension.
+- Source link list, with at least one source per major claim.
+- Trade-off data points mapped to decision criteria.
+- Open risks and unknowns list.
+
+The evidence package should be directly reusable in RFC `Decision Criteria`,
+`Options`, and `Risks` sections to avoid interpretation loss.
+
 ## End-to-end flow (strict order)
 
 0. **Pre-execution planning and scoping (required; controller must do this)**

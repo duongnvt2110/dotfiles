@@ -7,8 +7,6 @@ description: Helps users discover and install agent skills when they ask questio
 
 This skill helps you discover and install skills from the open agent skills ecosystem.
 
-## When to Use This Skill
-
 Use this skill when the user:
 
 - Asks "how do I do X" where X might be a common task with an existing skill

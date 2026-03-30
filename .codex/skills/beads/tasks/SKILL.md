@@ -1,17 +1,6 @@
 ---
 name: tasks
 description: Git-backed task graph and agent memory using Beads (bd CLI). Use for dependency-aware task management, long-horizon projects, and session-resilient development.
-homepage: https://github.com/steveyegge/beads
-read_when:
-  - You need to track tasks with dependencies across sessions.
-  - You want to find the next unblocked task to work on.
-  - A project has more than a handful of tasks that need ordering.
-  - You're starting a feature and need to plan work as a DAG.
-  - You are resuming after a break or context compaction.
-  - Someone says "continue", "where were we", or "what's next".
-metadata:
-  openclaw:
-    emoji: "📿"
 ---
 
 # Beads — Agent Memory & Task Graph
@@ -19,8 +8,6 @@ metadata:
 Beads (`bd`) is a distributed, git-backed graph issue tracker designed for AI coding agents. It replaces flat task lists with a dependency-aware graph, enabling long-horizon development without losing context across sessions.
 
 **Author:** Steve Yegge | **License:** MIT
-
-## When to Use Beads
 
 | Situation | Use Beads? |
 |-----------|-----------|

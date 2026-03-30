@@ -72,8 +72,6 @@ Options:
 | Find Supabase | `search "supabase"` |
 | Get Supabase auth | `context "/supabase/supabase" "authentication row level security"` |
 
-## When to Use
-
 - Before implementing any library-dependent feature
 - When unsure about current API signatures
 - For library version-specific behavior

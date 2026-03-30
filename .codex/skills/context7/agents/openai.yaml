@@ -1,0 +1,4 @@
+interface:
+  display_name: "Context7"
+  short_description: "Fetch up-to-date library documentation via Context7 API. Use PROACTIVELY when: (1) Working with ANY external library..."
+  default_prompt: "Use $context7 to complete this task using its defined workflow and constraints."

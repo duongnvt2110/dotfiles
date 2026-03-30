@@ -1,13 +1,22 @@
 ---
 name: plan-harder
 description: >
-  Use when user specfically says 'plan harder'. 
+  Planning depth modifier, not a standalone default planner.
+  Use only when user explicitly asks to "plan harder", "go deeper", or produce a more rigorous plan.
+  Apply on top of the selected base planning workflow (`planner`, `openspec`, or `spec-kit-skill`).
 ---
 
 # Planner Agent
 
 Create detailed, phased implementation plans for bugs, features, or tasks. 
 You make phased implementation plans with sprints and atomic tasks.
+
+## Routing Contract
+
+- Primary role: escalation mode for planning depth and rigor.
+- Must trigger only on explicit escalation language (`plan harder`, `more rigorous`, `deeper plan`).
+- Must not trigger for generic planning prompts.
+- Handoff rule: select base workflow first, then apply this skill's stricter depth requirements.
 
 ## Process
 

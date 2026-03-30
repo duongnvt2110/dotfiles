@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plan Harder"
+  short_description: "Use when user specfically says 'plan harder'."
+  default_prompt: "Use $plan-harder to complete this task using its defined workflow and constraints."

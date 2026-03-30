@@ -1,7 +1,6 @@
 ---
 name: review
 description: Review, proofread, and refine filed Beads epics and issues
-argument-hint: specific epic or issue IDs to focus on
 ---
 
 # Review and Refine Beads Issues

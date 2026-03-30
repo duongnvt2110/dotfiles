@@ -1,16 +1,6 @@
 ---
 name: openspec
-description: Spec-driven development using OpenSpec — a lightweight, fluid framework for defining what to build before writing code. Use for feature planning, brownfield changes, and structured AI-assisted development.
-homepage: https://github.com/Fission-AI/OpenSpec
-read_when:
-  - You're starting a new feature and want structured planning before code.
-  - You need to agree on requirements, design, and tasks before implementation.
-  - You're making changes to an existing codebase and want spec-anchored artifacts.
-  - Someone mentions "spec", "proposal", "change request", or "feature planning".
-  - You need to understand what the current system does before modifying it.
-metadata:
-  openclaw:
-    emoji: "📋"
+description: Spec-driven development using OpenSpec — a lightweight, fluid framework for defining what to build before writing code. Prefer for brownfield changes and existing-system spec evolution. Trigger on explicit OpenSpec requests, `/opsx:*` workflows, or clear brownfield spec-update intent. Do not trigger for generic planning when no spec workflow is requested.
 ---
 
 # OpenSpec — Spec-Driven Development
@@ -18,6 +8,14 @@ metadata:
 OpenSpec is a lightweight, fluid spec framework for AI-assisted development. It helps you and your AI agree on **what to build** before writing code, using structured artifacts that persist as the source of truth.
 
 **Philosophy:** Fluid not rigid. Iterative not waterfall. Brownfield-first.
+
+## Routing Contract
+
+- Primary role: brownfield spec workflow for existing repositories and incremental changes.
+- Must trigger for explicit OpenSpec intent (`openspec`, `/opsx:*`) or clear brownfield spec-change contexts.
+- Must yield to `spec-kit-skill` when context is explicitly greenfield constitution workflow (`.specify`, `specify` CLI, constitution-first requests).
+- Must yield to `planner` for generic planning asks with no spec workflow requirement.
+- Handoff rule: after spec artifacts are complete, hand off implementation decomposition to `planner` or Beads workflow.
 
 ## Which Workflow?
 

@@ -32,5 +32,5 @@ This repository curates the Codex/Claude agent catalog that powers workspace aut
 - Keep `.codex/auth.json` and any session transcripts private; never paste credentials into agent briefs.
 - When contributing automation around the CLI, reference `.codex/config.toml` instead of duplicating configuration defaults, and avoid committing personalized tokens or machine-specific paths.
 
-
+# Load context
 First read ALL of the AGENTS.md file and README.md file super carefully and understand ALL of both! Then use your code investigation agent mode to fully understand the code, and technical architecture and purpose of the project.

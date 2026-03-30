@@ -1,0 +1,4 @@
+interface:
+  display_name: "Wp Interactivity Api"
+  short_description: "Use when building or debugging WordPress Interactivity API features (data-wp-* directives, @wordpress/interactivity s..."
+  default_prompt: "Use $wp-interactivity-api to complete this task using its defined workflow and constraints."

@@ -1,60 +1,148 @@
-# ExecPlans
- 
-When implementing complex features or performing significant refactors, you must use an ExecPlan (as defined in `.agent/PLANS.md`, located either in the project root or at `~/.codex/.agent`) to guide the work from design through implementation.
+# AGENTS.md
 
- ## Workflow Orchestration
+This file defines global, repo-agnostic guardrails for coding agents. Tool- or
+workflow-specific rules belong in each project’s AGENTS.md.
 
-  ### 0. Skill Pre‑Flight (Mandatory)
+## /init Instruction
 
-  - Before any planning or implementation, scan the available skills list and choose the best match.
-  - If multiple skills apply, use the minimal set and state the order.
-  - If a skill is missing or blocked, fall back to the closest workflow and note the gap.
+When `/init` is run for a project:
 
-  ### 1. Plan Mode Default (with Brainstorming)
+1. Copy `PROJECT-AGENTS.md` into the project root as `AGENTS.md` if it does not
+   already exist.
+2. Treat `PROJECT-AGENTS.md` as the source of project-level workflow guidance.
+3. If `PROJECT-AGENTS.md` is missing, proceed with this global file and note
+   the absence in your report.
 
-  - Enter plan mode for any task with 3+ steps, cross‑file changes, or architectural decisions.
-  - Use the brainstorming skill at the start of Plan Mode to clarify intent and options.
-  - If new info invalidates the plan: stop, re‑plan, then continue.
-  - Use plan mode for verification steps too (tests, QA, rollout).
-  - Write specs up front to eliminate ambiguity and reduce rework.
+## 1) Instruction Priority
 
-  ### 2. OpenSpec → Beads Flow (After Detailed Plan)
+When instructions conflict, follow this order:
 
-  - Brainstorming phase: always read the PRD + ExecPlan before writing OpenSpec.
-  - Write spec first with OpenSpec (scope, flows, edge cases, acceptance).
-  - Save spec deltas in openspec/changes/... and update the relevant plan doc.
-  - Convert plan → beads:
-      - Create epic + tasks with bd create ... --json
-      - Link dependencies with --deps discovered-from:<parent>
-  - Start work only after:
-      - bd ready --json shows unblocked items
-      - You claim the task with bd update <id> --status in_progress --json
+1. System and developer instructions
+2. Project `AGENTS.md`
+3. Task-specific docs and repository docs (`README.md`, `docs/`, ADRs, specs)
+4. The direct user request
+5. This `AGENTS.md`
 
-  ### 3. Subagent Strategy (Keep Main Context Clean)
+If there is a conflict, follow the higher-priority instruction and note the
+conflict briefly in your report.
 
-  - Offload research, exploration, and parallel analysis to subagents.
-  - One task per subagent; aggregate findings in a single summary.
+## 2) Repository Discovery (Always First)
 
-  ### 4. Self‑Improvement Loop
+Before planning or editing:
 
-  - After any user correction, update tasks/lessons.md with a rule.
-  - Review lessons at session start and before similar tasks.
-  - Treat lessons as executable guardrails, not notes.
+- Inspect repository structure and identify relevant entry points.
+- Read local docs and config files relevant to the change.
+- Confirm any required spec/plan exists and is the latest source of truth.
+- Identify build, test, lint, format, and run commands.
+- Locate the exact files you will change.
 
-  ### 5. Verification Before Done
+If discovery is not possible, state why and list assumptions.
 
-  - Never mark done without proof: tests, logs, or direct runtime checks.
-  - Validate behavior diff vs main when relevant.
-  - Ask: “Would a staff engineer approve this?”
+## 3) Planning Standard
 
-  ### 6. Demand Elegance (Balanced)
+Choose the lightest planning process that still makes the work safe.
 
-  - For non‑trivial changes, ask if a simpler or more robust approach exists.
-  - If a fix feels hacky, replace with the elegant solution.
-  - Skip this for simple/obvious tasks.
+- Use a full plan for multi-step, cross-file, or architectural changes.
+- Small, localized changes may use a short plan but must still verify and
+  report.
 
-  ### 7. Autonomous Bug Fixing
+## 4) Editing Rules
 
-  - When given a bug report, fix it end‑to‑end without extra prompting.
-  - Trace logs/tests to root cause, then resolve.
-  - Don’t bounce the user unless blocked by missing data.
+When editing code:
+
+- Prefer the smallest safe diff that fully solves the problem.
+- Preserve existing style and patterns unless explicitly changing them.
+- Do not refactor unrelated code.
+- Do not rename public APIs, files, or exported symbols without checking
+  impact.
+- Do not introduce new dependencies unless clearly justified.
+- Update related tests, docs, configs, or migrations when behavior changes.
+- Keep backward compatibility unless the task explicitly allows breaking
+  changes.
+
+## 5) Skill and Tool Pre-Flight
+
+Before planning or implementation:
+
+- Check available skills, tools, or project workflows.
+- Choose the smallest useful set.
+- State the chosen order only when it affects the outcome.
+- If a preferred skill or tool is unavailable, use the closest supported path
+  and note the gap.
+
+## 6) Subagent Usage
+
+Use subagents only when they reduce risk or keep the main context focused.
+
+- One clear task per subagent.
+- Use them for research, exploration, or parallel analysis.
+- Aggregate findings into one concise summary before acting.
+
+## 7) Verification Requirement
+
+Never mark work complete without verification. Verification should follow this
+order when possible:
+
+1. Run the narrowest relevant test.
+2. Run broader tests only if needed.
+3. Run lint/format/type-check steps relevant to the change.
+4. Perform direct runtime or manual checks when automated checks are
+   unavailable.
+
+In the final report:
+
+- State exactly what was verified.
+- State the result.
+- State what was not verified.
+- State any remaining risk.
+
+If verification is impossible, say so explicitly and explain why.
+
+## 8) Definition of Done
+
+A task is done only when:
+
+- The requested behavior is implemented.
+- Relevant tests or checks pass, or verification limits are clearly stated.
+- Related documentation is updated when needed.
+- Known risks, trade-offs, and follow-ups are reported clearly.
+
+## 9) Bug-Fix Standard
+
+When given a bug report:
+
+- Reproduce or narrow the failure.
+- Trace to the most likely root cause.
+- Fix the underlying issue, not just the symptom, when practical.
+- Add or update regression coverage when reasonable.
+- Verify the fix directly.
+
+Do not ask unnecessary follow-up questions when the repository already
+contains enough information to proceed.
+
+## 10) Quality Bar
+
+For non-trivial work, check whether the solution is:
+
+- Simpler
+- More robust
+- Easier to maintain
+- Consistent with the rest of the repository
+
+Prefer the simplest solution that meets the requirements and verification
+standard.
+
+## 11) Reporting Format
+
+Final task reports must include:
+
+- Summary of what changed
+- Key decisions or trade-offs
+- Files changed
+- Verification performed
+- Remaining risks or follow-ups
+
+## 12) Safety
+
+- Do not change unrelated files.
+- Avoid destructive operations unless explicitly requested.

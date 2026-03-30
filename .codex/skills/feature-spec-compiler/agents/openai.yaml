@@ -1,0 +1,4 @@
+interface:
+  display_name: "Feature Spec Compiler"
+  short_description: "Compile business rules into structured specs."
+  default_prompt: "Use $feature-spec-compiler to compile these rules into a decision table, schema, and tests."

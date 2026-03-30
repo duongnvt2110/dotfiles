@@ -1,0 +1,4 @@
+interface:
+  display_name: "File"
+  short_description: "File detailed Beads epics and issues from a plan"
+  default_prompt: "Use $file to complete this task using its defined workflow and constraints."

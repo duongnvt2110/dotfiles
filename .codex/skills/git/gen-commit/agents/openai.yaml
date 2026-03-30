@@ -1,0 +1,4 @@
+interface:
+  display_name: "Gen Commit"
+  short_description: "Generate a Conventional Commit message from staged git changes and optionally run `git commit` with that message. Use..."
+  default_prompt: "Use $gen-commit to complete this task using its defined workflow and constraints."

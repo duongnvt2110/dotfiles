@@ -1,0 +1,4 @@
+interface:
+  display_name: "Vercel React Best Practices"
+  short_description: "React and Next.js performance optimization guidelines from Vercel Engineering. This skill should be used when writing..."
+  default_prompt: "Use $vercel-react-best-practices to complete this task using its defined workflow and constraints."

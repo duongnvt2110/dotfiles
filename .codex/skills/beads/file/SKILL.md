@@ -1,7 +1,6 @@
 ---
 name: file
 description: File detailed Beads epics and issues from a plan
-argument-hint: <plan-description-or-context>
 ---
 
 # File Beads Epics and Issues from Plan

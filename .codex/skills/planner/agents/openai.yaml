@@ -1,0 +1,4 @@
+interface:
+  display_name: "Planner"
+  short_description: "Create comprehensive, phased implementation plans with sprints and atomic tasks. Use when user says: \"make a plan\", \"..."
+  default_prompt: "Use $planner to complete this task using its defined workflow and constraints."

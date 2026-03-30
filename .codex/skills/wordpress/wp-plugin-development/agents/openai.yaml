@@ -1,0 +1,4 @@
+interface:
+  display_name: "Wp Plugin Development"
+  short_description: "Use when developing WordPress plugins: architecture and hooks, activation/deactivation/uninstall, admin UI and Settin..."
+  default_prompt: "Use $wp-plugin-development to complete this task using its defined workflow and constraints."

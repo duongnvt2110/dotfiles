@@ -1,16 +1,37 @@
 ---
 name: planner
 description: >
+  Default planning skill for generic implementation planning requests.
   Create comprehensive, phased implementation plans with sprints and atomic tasks.
   Use when user says: "make a plan", "create a plan", "plan this out", "plan the implementation",
   "help me plan", "design a plan", "draft a plan", "write a plan", "outline the steps",
   "break this down into tasks", "what's the plan for", or any similar planning request.
   Also triggers on explicit "/planner" or "/plan" commands.
+  Do not take precedence over explicit OpenSpec, Spec-Kit, Phase1 plan-space, or "plan harder" requests.
 ---
 
 # Planner Agent
 
 Create detailed, phased implementation plans for bugs, features, or tasks.
+
+## Routing Contract
+
+- Primary role: default planner for generic planning prompts.
+- Must yield when user explicitly requests: `openspec`, `spec-kit`, `phase1-plan-space`, or `plan-harder`.
+- Must yield when context clearly indicates:
+  - Greenfield constitution workflow (`.specify`, `specify` CLI) -> `spec-kit-skill`
+  - Brownfield spec-change workflow (`openspec`, `/opsx:*`) -> `openspec`
+  - Multi-plan competition/synthesis -> `phase1-plan-space`
+- Handoff rule: if spec artifacts are required, hand off to `openspec` or `spec-kit-skill`, then resume for execution task decomposition.
+
+## Decision Boundary
+
+- Do not finalize architecture decisions in this skill.
+- If multiple viable options require structured comparison, hand off to
+  `rfc-writer`.
+- If a decision is already approved and needs authoritative recording, hand off
+  to `adr-recorder`.
+- Recommendations in plans are non-binding until captured by `adr-recorder`.
 
 ## Process
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Wp Performance"
+  short_description: "Use when investigating or improving WordPress performance (backend-only agent): profiling and measurement (WP-CLI pro..."
+  default_prompt: "Use $wp-performance to complete this task using its defined workflow and constraints."

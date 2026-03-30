@@ -1,0 +1,4 @@
+interface:
+  display_name: "Phase 1 Plan-Space"
+  short_description: "Phase 1 plan-space workflow guidance"
+  default_prompt: "Use $phase1-plan-space to run multi-model plan competition and synthesis before implementation."

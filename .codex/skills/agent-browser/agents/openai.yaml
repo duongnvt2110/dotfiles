@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent Browser"
+  short_description: "A fast Rust-based headless browser automation CLI with Node.js fallback that enables AI agents to navigate, click, ty..."
+  default_prompt: "Use $Agent Browser to complete this task using its defined workflow and constraints."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Wpds"
+  short_description: "Use when building UIs leveraging the WordPress Design System (WPDS) and its components, tokens, patterns, etc."
+  default_prompt: "Use $wpds to complete this task using its defined workflow and constraints."

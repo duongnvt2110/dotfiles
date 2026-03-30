@@ -1,0 +1,4 @@
+interface:
+  display_name: "Openspec"
+  short_description: "Spec-driven development using OpenSpec — a lightweight, fluid framework for defining what to build before writing cod..."
+  default_prompt: "Use $openspec to complete this task using its defined workflow and constraints."

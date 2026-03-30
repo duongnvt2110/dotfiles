@@ -1,0 +1,4 @@
+interface:
+  display_name: "Wp Rest Api"
+  short_description: "Use when building, extending, or debugging WordPress REST API endpoints/routes: register_rest_route, WP_REST_Controll..."
+  default_prompt: "Use $wp-rest-api to complete this task using its defined workflow and constraints."

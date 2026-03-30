@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review"
+  short_description: "Review, proofread, and refine filed Beads epics and issues"
+  default_prompt: "Use $review to complete this task using its defined workflow and constraints."
