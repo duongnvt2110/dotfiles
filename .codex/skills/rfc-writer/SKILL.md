@@ -1,6 +1,14 @@
 ---
 name: rfc-writer
-description: Draft and facilitate Request for Comments documents for non-trivial technical changes with multiple viable options, cross-team impact, or meaningful risk. Use to compare alternatives against ranked decision criteria and produce a recommendation before commitment. Enforce deterministic pre-RFC gates: invoke brainstorming when framing is unclear, and invoke deep-research when cross-team or external-impact decisions lack sufficient evidence. Do not record final authoritative decision status here; hand off accepted outcomes to adr-recorder.
+description: >-
+  Draft and facilitate Request for Comments documents for non-trivial technical
+  changes with multiple viable options, cross-team impact, or meaningful risk.
+  Use to compare alternatives against ranked decision criteria and produce a
+  recommendation before commitment. Enforce deterministic pre-RFC gates: invoke
+  brainstorming when framing is unclear, and invoke deep-research when
+  cross-team or external-impact decisions lack sufficient evidence. Do not
+  record final authoritative decision status here; hand off accepted outcomes
+  to adr-recorder.
 ---
 
 # RFC Writer
