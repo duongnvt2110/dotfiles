@@ -1,6 +1,6 @@
 ---
 name: figma-cache
-description: Cache-first variant of the general Figma MCP workflow with 429 asset fallback via agent-browser. Trigger only when the user explicitly asks for cache-first behavior, reliable cached extraction, or retry/throttling mitigation. Do not trigger for generic non-cache Figma requests.
+description: "Cache-first variant of the general Figma MCP workflow with 429 asset fallback via agent-browser."
 ---
 
 # Figma MCP (Cache-First)

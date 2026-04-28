@@ -1,4 +1,4 @@
 interface:
   display_name: "Security Best Practices"
-  short_description: "Security reviews and secure-by-default guidance"
+  short_description: "Perform language and framework specific security best-practice reviews and suggest improvements."
   default_prompt: "Review this codebase for security best practices and suggest secure-by-default improvements."

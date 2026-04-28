@@ -1,6 +1,6 @@
 interface:
   display_name: "Figma Implement Design (Cache-First)"
-  short_description: "Design-to-code with cache-first MCP and 429 asset fallback"
+  short_description: "Specialized cache-first design-to-code workflow for Figma with 1:1 visual fidelity and 429 asset fallback via."
   default_prompt: "Implement the Figma design using cache-first MCP calls; if asset downloads hit 429, export missing assets via agent-browser."
 
 dependencies:

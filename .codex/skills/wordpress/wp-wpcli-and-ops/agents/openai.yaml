@@ -1,4 +1,4 @@
 interface:
   display_name: "Wp Wpcli And Ops"
-  short_description: "Use when working with WP-CLI (wp) for WordPress operations: safe search-replace, db export/import, plugin/theme/user/..."
+  short_description: "Use when working with WP-CLI (wp) for WordPress operations: safe search-replace, db export/import."
   default_prompt: "Use $wp-wpcli-and-ops to complete this task using its defined workflow and constraints."

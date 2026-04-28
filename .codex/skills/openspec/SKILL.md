@@ -1,6 +1,6 @@
 ---
 name: openspec
-description: Spec-driven development using OpenSpec — a lightweight, fluid framework for defining what to build before writing code. Prefer for brownfield changes and existing-system spec evolution. Trigger on explicit OpenSpec requests, `/opsx:*` workflows, or clear brownfield spec-update intent. Do not trigger for generic planning when no spec workflow is requested.
+description: "Spec-driven development using OpenSpec — a lightweight, fluid framework for defining what to build before writing code."
 ---
 
 # OpenSpec — Spec-Driven Development

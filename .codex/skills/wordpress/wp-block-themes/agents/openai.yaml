@@ -1,4 +1,4 @@
 interface:
   display_name: "Wp Block Themes"
-  short_description: "Use when developing WordPress block themes: theme.json (global settings/styles), templates and template parts, patter..."
+  short_description: "Use when developing WordPress block themes: theme.json (global settings/styles), templates and template parts."
   default_prompt: "Use $wp-block-themes to complete this task using its defined workflow and constraints."

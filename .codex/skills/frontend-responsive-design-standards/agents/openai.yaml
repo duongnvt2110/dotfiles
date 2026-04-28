@@ -1,4 +1,4 @@
 interface:
   display_name: "Frontend Responsive Design Standards"
-  short_description: "Build responsive, mobile-first layouts using fluid containers, flexible units, media queries, and touch-friendly desi..."
+  short_description: "Build responsive, mobile-first layouts using fluid containers, flexible units, media queries, and touch-friendly."
   default_prompt: "Use $Frontend Responsive Design Standards to complete this task using its defined workflow and constraints."

@@ -1,6 +1,6 @@
 ---
 name: spec-kit-skill
-description: 'GitHub Spec-Kit integration for constitution-based spec-driven development. Prefer for greenfield initiatives and projects using `.specify/` lifecycle and `specify` CLI. Trigger on explicit Spec-Kit/constitution/`.specify` intent. Do not trigger for generic planning prompts or brownfield OpenSpec workflows.'
+description: "GitHub Spec-Kit integration for constitution-based spec-driven development."
 ---
 
 # Spec-Kit: Constitution-Based Spec-Driven Development

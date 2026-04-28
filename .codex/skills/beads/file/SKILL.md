@@ -1,6 +1,6 @@
 ---
 name: file
-description: File detailed Beads epics and issues from a plan
+description: "File detailed Beads epics and issues from a plan"
 ---
 
 # File Beads Epics and Issues from Plan

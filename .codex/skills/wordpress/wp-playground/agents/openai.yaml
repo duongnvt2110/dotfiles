@@ -1,4 +1,4 @@
 interface:
   display_name: "Wp Playground"
-  short_description: "Use for WordPress Playground workflows: fast disposable WP instances in the browser or locally via @wp-playground/cli..."
+  short_description: "Use for WordPress Playground workflows: fast disposable WP instances in the browser or locally via @wp-playground/cli."
   default_prompt: "Use $wp-playground to complete this task using its defined workflow and constraints."

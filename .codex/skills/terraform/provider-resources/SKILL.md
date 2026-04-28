@@ -1,6 +1,6 @@
 ---
 name: provider-resources
-description: Implement Terraform Provider resources and data sources using the Plugin Framework. Use when developing CRUD operations, schema design, state management, and acceptance testing for provider resources.
+description: "Implement Terraform Provider resources and data sources using the Plugin Framework."
 metadata:
   copyright: Copyright IBM Corp. 2026
   version: "0.0.1"

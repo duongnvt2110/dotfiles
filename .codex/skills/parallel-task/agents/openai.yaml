@@ -1,4 +1,4 @@
 interface:
   display_name: "Parallel Task"
-  short_description: "Execute plan files by launching multiple parallel subagents to complete tasks simultaneously. Triggers on explicit \"/..."
+  short_description: "Execute plan files by launching multiple parallel subagents to complete tasks simultaneously."
   default_prompt: "Use $parallel-task to complete this task using its defined workflow and constraints."

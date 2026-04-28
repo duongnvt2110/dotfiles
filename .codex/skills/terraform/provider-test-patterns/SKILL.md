@@ -1,16 +1,6 @@
 ---
 name: provider-test-patterns
-description: >-
-  Terraform provider acceptance test patterns using terraform-plugin-testing
-  with the Plugin Framework. Covers test structure, TestCase/TestStep fields,
-  ConfigStateChecks with custom statecheck.StateCheck implementations,
-  plan checks, CompareValue for cross-step assertions, config helpers,
-  import testing with ImportStateKind, sweepers, and scenario patterns
-  (basic, update, disappears, validation, regression), and ephemeral resource
-  testing with the echoprovider package. Use when writing, reviewing, or
-  debugging provider acceptance tests, including questions about statecheck,
-  plancheck, TestCheckFunc, CheckDestroy, ExpectError, import state
-  verification, ephemeral resources, or how to structure test files.
+description: "Terraform provider acceptance test patterns using terraform-plugin-testing with the Plugin Framework."
 metadata:
   copyright: Copyright IBM Corp. 2026
   version: "0.0.1"

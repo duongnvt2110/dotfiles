@@ -1,8 +1,7 @@
 ---
 name: "figma-implement-design-cache"
-description: "Specialized cache-first design-to-code workflow for Figma with 1:1 visual fidelity and 429 asset fallback via agent-browser. Trigger only when implementation from Figma is requested and cache-first/reliability behavior is explicitly preferred. Do not trigger for generic Figma tasks or extraction-only outputs."
+description: "Specialized cache-first design-to-code workflow for Figma with 1:1 visual fidelity and 429 asset fallback via agent-browser."
 ---
-
 
 # Implement Design
 

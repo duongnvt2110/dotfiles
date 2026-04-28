@@ -1,6 +1,6 @@
 ---
 name: deep-research
-description: 'Multi-instance (multi-agent) deep research orchestration workflow: split one research goal into parallelizable sub-goals, run child processes with Codex CLI (`codex exec`) under the default `workspace-write` sandbox; prefer installed skills for networking and collection, then MCP tools; aggregate child results via scripts and polish by section, delivering "final report file path + key findings/recommendations summary." Use for systematic web/material research, competitive/industry analysis, batch link/dataset shard retrieval, long-form writing and evidence synthesis, or when users mention "deep research/Deep Research/Wide Research/multi-agent parallel research/multi-process research."'
+description: "Multi-instance (multi-agent) deep research orchestration workflow: split one research goal into parallelizable sub-goals, run child processes with Codex CLI."
 ---
 
 # Deep Research

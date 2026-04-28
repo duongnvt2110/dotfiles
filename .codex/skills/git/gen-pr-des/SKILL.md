@@ -1,9 +1,6 @@
 ---
 name: gen-pr-des
-description: >-
-  Generate a pull request description from git history and diff data between
-  a base and head ref. Use when the user asks to draft PR content, fill a PR
-  template, or summarize branch changes for review.
+description: "Generate a pull request description from git history and diff data between a base and head ref."
 ---
 
 # Pull Request Description Workflow

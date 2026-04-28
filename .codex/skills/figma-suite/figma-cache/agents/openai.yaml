@@ -1,6 +1,6 @@
 interface:
   display_name: "Figma (Cache-First)"
-  short_description: "Figma MCP with cache-first workflow and 429 asset fallback"
+  short_description: "Cache-first variant of the general Figma MCP workflow with 429 asset fallback via agent-browser."
   icon_small: "./assets/figma-small.svg"
   icon_large: "./assets/figma.png"
   default_prompt: "Use Figma MCP in cache-first mode to extract design context and assets; if MCP asset downloads hit 429, export missing assets via agent-browser."

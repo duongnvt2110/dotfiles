@@ -1,4 +1,4 @@
 interface:
   display_name: "Terraform Skill for Codex"
-  short_description: "Terraform/OpenTofu patterns, testing, and CI/CD"
+  short_description: "Use when working with Terraform or OpenTofu - creating modules, writing tests (native test framework, Terratest)."
   default_prompt: "Use $terraform-skill-codex to design and validate a production-ready Terraform/OpenTofu module with tests and CI checks."

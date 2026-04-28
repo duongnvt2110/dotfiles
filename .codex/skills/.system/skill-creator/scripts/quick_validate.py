@@ -1,15 +1,60 @@
 #!/usr/bin/env python3
-"""
-Quick validation script for skills - minimal version
-"""
+"""Quick validation script for skills without external dependencies."""
 
 import re
 import sys
 from pathlib import Path
 
-import yaml
-
 MAX_SKILL_NAME_LENGTH = 64
+MAX_SKILL_DESCRIPTION_LENGTH = 160
+MAX_AGENT_SHORT_DESCRIPTION_LENGTH = 120
+
+
+def parse_frontmatter(frontmatter_text: str):
+    """Parse simple YAML frontmatter key/value pairs used by SKILL.md."""
+    data = {}
+    lines = frontmatter_text.splitlines()
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        if not line.strip():
+            i += 1
+            continue
+        if line.startswith(" ") or line.startswith("\t"):
+            # Nested fields (for example metadata maps) are ignored by this quick validator.
+            i += 1
+            continue
+        match = re.match(r"^([A-Za-z0-9_-]+):\s*(.*)$", line)
+        if not match:
+            return None, f"Invalid frontmatter line: {line!r}"
+        key = match.group(1)
+        value = match.group(2).strip()
+        if value in {"|", ">", "|-", ">-", "|+", ">+"}:
+            block = []
+            i += 1
+            while i < len(lines):
+                nxt = lines[i]
+                if re.match(r"^[A-Za-z0-9_-]+:\s", nxt):
+                    i -= 1
+                    break
+                if nxt.startswith("  "):
+                    block.append(nxt.strip())
+                elif not nxt.strip():
+                    if block:
+                        block.append("")
+                else:
+                    return None, f"Invalid block scalar indentation: {nxt!r}"
+                i += 1
+            parsed = " ".join(part for part in block if part).strip()
+        elif value.startswith('"') and value.endswith('"') and len(value) >= 2:
+            parsed = value[1:-1]
+        elif value.startswith("'") and value.endswith("'") and len(value) >= 2:
+            parsed = value[1:-1]
+        else:
+            parsed = value
+        data[key] = parsed
+        i += 1
+    return data, None
 
 
 def validate_skill(skill_path):
@@ -30,14 +75,20 @@ def validate_skill(skill_path):
 
     frontmatter_text = match.group(1)
 
-    try:
-        frontmatter = yaml.safe_load(frontmatter_text)
-        if not isinstance(frontmatter, dict):
-            return False, "Frontmatter must be a YAML dictionary"
-    except yaml.YAMLError as e:
-        return False, f"Invalid YAML in frontmatter: {e}"
+    frontmatter, parse_error = parse_frontmatter(frontmatter_text)
+    if parse_error:
+        return False, f"Invalid frontmatter: {parse_error}"
+    if not isinstance(frontmatter, dict):
+        return False, "Frontmatter must be a key/value mapping"
 
-    allowed_properties = {"name", "description", "license", "allowed-tools", "metadata"}
+    allowed_properties = {
+        "name",
+        "description",
+        "license",
+        "allowed-tools",
+        "metadata",
+        "compatibility",
+    }
 
     unexpected_keys = set(frontmatter.keys()) - allowed_properties
     if unexpected_keys:
@@ -82,11 +133,28 @@ def validate_skill(skill_path):
     if description:
         if "<" in description or ">" in description:
             return False, "Description cannot contain angle brackets (< or >)"
-        if len(description) > 1024:
+        if len(description) > MAX_SKILL_DESCRIPTION_LENGTH:
             return (
                 False,
-                f"Description is too long ({len(description)} characters). Maximum is 1024 characters.",
+                f"Description is too long ({len(description)} characters). "
+                f"Maximum is {MAX_SKILL_DESCRIPTION_LENGTH} characters.",
             )
+
+    agent_yaml = skill_path / "agents" / "openai.yaml"
+    if agent_yaml.exists():
+        agent_content = agent_yaml.read_text()
+        short_match = re.search(
+            r"^\s*short_description:\s*(.*)$", agent_content, flags=re.MULTILINE
+        )
+        if short_match:
+            short_description = short_match.group(1).strip().strip('"').strip("'")
+            if len(short_description) > MAX_AGENT_SHORT_DESCRIPTION_LENGTH:
+                return (
+                    False,
+                    "agents/openai.yaml short_description is too long "
+                    f"({len(short_description)} characters). Maximum is "
+                    f"{MAX_AGENT_SHORT_DESCRIPTION_LENGTH} characters.",
+                )
 
     return True, "Skill is valid!"
 

@@ -1,6 +1,6 @@
 interface:
   display_name: "Figma Detail Extractor"
-  short_description: "Extract detailed specs, tables, and assets from Figma"
+  short_description: "Specialized Figma extraction workflow for deep structured outputs (component specs, layer tables, asset lists, and."
   default_prompt: "Use Figma MCP to extract detailed component specs, layer tables, and assets from the provided Figma node(s)."
 
 dependencies:

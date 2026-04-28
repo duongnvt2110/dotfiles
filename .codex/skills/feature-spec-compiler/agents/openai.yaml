@@ -1,4 +1,4 @@
 interface:
   display_name: "Feature Spec Compiler"
-  short_description: "Compile business rules into structured specs."
+  short_description: "Compile business rules, policies, and feature requests into structured, verifiable specification artifacts like."
   default_prompt: "Use $feature-spec-compiler to compile these rules into a decision table, schema, and tests."

@@ -1,4 +1,4 @@
 interface:
   display_name: "Wp Abilities Api"
-  short_description: "Use when working with the WordPress Abilities API (wp_register_ability, wp_register_ability_category, /wp-json/wp-abi..."
+  short_description: "Use when working with the WordPress Abilities API (wp_register_ability, wp_register_ability_category."
   default_prompt: "Use $wp-abilities-api to complete this task using its defined workflow and constraints."

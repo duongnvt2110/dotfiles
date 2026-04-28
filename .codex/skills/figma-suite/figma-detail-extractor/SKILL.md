@@ -1,6 +1,6 @@
 ---
 name: figma-detail-extractor
-description: Specialized Figma extraction workflow for deep structured outputs (component specs, layer tables, asset lists, and documentation artifacts). Trigger when users explicitly request detailed extraction/reporting outputs, not code implementation. Prefer cache by default unless user requests no-cache/refetch.
+description: "Specialized Figma extraction workflow for deep structured outputs (component specs, layer tables, asset lists, and documentation artifacts)."
 ---
 
 # Figma Detail Extractor

@@ -1,4 +1,4 @@
 interface:
   display_name: "Wp Phpstan"
-  short_description: "Use when configuring, running, or fixing PHPStan static analysis in WordPress projects (plugins/themes/sites): phpsta..."
+  short_description: "Use when configuring, running, or fixing PHPStan static analysis in WordPress projects (plugins/themes/sites)."
   default_prompt: "Use $wp-phpstan to complete this task using its defined workflow and constraints."

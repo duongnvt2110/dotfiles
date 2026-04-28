@@ -1,8 +1,8 @@
 ---
 name: parallel-task
-description: >
-  Execute plan files by launching multiple parallel subagents to complete tasks simultaneously.
-  Triggers on explicit "/parallel-task" commands.
+description: >-
+  Execute plan files by launching multiple parallel subagents to complete tasks
+  simultaneously. Triggers on explicit "/parallel-task" commands.
 ---
 
 # Parallel Task Executor

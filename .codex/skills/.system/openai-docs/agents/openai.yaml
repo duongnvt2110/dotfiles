@@ -1,6 +1,6 @@
 interface:
   display_name: "OpenAI Docs"
-  short_description: "Reference official OpenAI docs, including upgrade guidance"
+  short_description: "Use when the user asks how to build with OpenAI products or APIs and needs up-to-date official documentation with."
   icon_small: "./assets/openai-small.svg"
   icon_large: "./assets/openai.png"
   default_prompt: "Look up official OpenAI docs, load relevant GPT-5.4 upgrade references when applicable, and answer with concise, cited guidance."

@@ -1,6 +1,6 @@
 ---
 name: wp-wpcli-and-ops
-description: "Use when working with WP-CLI (wp) for WordPress operations: safe search-replace, db export/import, plugin/theme/user/content management, cron, cache flushing, multisite, and scripting/automation with wp-cli.yml."
+description: "Use when working with WP-CLI (wp) for WordPress operations: safe search-replace, db export/import, plugin/theme/user/content management, cron, cache flushing."
 ---
 
 # WP-CLI and Ops

@@ -1,6 +1,6 @@
 ---
 name: review
-description: Review, proofread, and refine filed Beads epics and issues
+description: "Review, proofread, and refine filed Beads epics and issues"
 ---
 
 # Review and Refine Beads Issues

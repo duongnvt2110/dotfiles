@@ -1,4 +1,4 @@
 interface:
   display_name: "Deep Research"
-  short_description: "深度调研的多实例（多 Agent）编排工作流：把一个调研目标拆成可并行子目标，用 Codex CLI（`codex exec`）在默认 `workspace-write` 沙箱内运行子进程；联网与采集优先使用已安装的 skills，其..."
+  short_description: "Multi-instance (multi-agent) deep research orchestration workflow: split one research goal into parallelizable."
   default_prompt: "Use $deep-research to complete this task using its defined workflow and constraints."

@@ -1,4 +1,4 @@
 interface:
   display_name: "Wp Project Triage"
-  short_description: "Use when you need a deterministic inspection of a WordPress repository (plugin/theme/block theme/WP core/Gutenberg/fu..."
+  short_description: "Use when you need a deterministic inspection of a WordPress repository (plugin/theme/block theme/WP."
   default_prompt: "Use $wp-project-triage to complete this task using its defined workflow and constraints."

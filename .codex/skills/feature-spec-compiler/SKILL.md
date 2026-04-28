@@ -1,6 +1,6 @@
 ---
 name: feature-spec-compiler
-description: "Compile business rules, policies, and feature requests into structured, verifiable specification artifacts like decision tables, workflows, schemas, test cases, and QA checklists. Use when asked to map product features to business logic, define decision or workflow rules, or generate implementable specs for engineering and QA."
+description: "Compile business rules, policies, and feature requests into structured, verifiable specification artifacts like decision tables, workflows, schemas, test."
 ---
 
 # Feature Spec Compiler

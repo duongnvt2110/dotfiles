@@ -1,6 +1,6 @@
 ---
 name: run-acceptance-tests
-description: Guide for running acceptance tests for a Terraform provider. Use this when asked to run an acceptance test or to run a test with the prefix `TestAcc`.
+description: "Guide for running acceptance tests for a Terraform provider. Use this when asked to run an acceptance test or to run a test with the prefix `TestAcc`."
 license: MPL-2.0
 metadata:
   copyright: Copyright IBM Corp. 2026

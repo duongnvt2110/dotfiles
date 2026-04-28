@@ -1,6 +1,6 @@
 ---
 name: gen-commit
-description: Generate a Conventional Commit message from staged git changes and optionally run `git commit` with that message. Use when the user asks to draft a commit message, summarize staged work, or commit already-staged files without adding new files.
+description: "Generate a Conventional Commit message from staged git changes and optionally run `git commit` with that message."
 ---
 
 # Commit Workflow Skill

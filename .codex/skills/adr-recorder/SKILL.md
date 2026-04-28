@@ -1,6 +1,6 @@
 ---
 name: adr-recorder
-description: Record finalized architecture decisions as Architecture Decision Records. Use when a decision is approved and must be captured as the authoritative source of truth with status, date, deciders, rationale, consequences, and supersession links. Use this skill as the only place that marks final architecture decision status.
+description: "Record finalized architecture decisions as Architecture Decision Records."
 ---
 
 # ADR Recorder

@@ -1,6 +1,6 @@
 ---
 name: tasks
-description: Git-backed task graph and agent memory using Beads (bd CLI). Use for dependency-aware task management, long-horizon projects, and session-resilient development.
+description: "Git-backed task graph and agent memory using Beads (bd CLI). Use for dependency-aware task management, long-horizon projects, and session-resilient development."
 ---
 
 # Beads — Agent Memory & Task Graph

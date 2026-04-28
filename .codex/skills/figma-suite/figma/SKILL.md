@@ -1,6 +1,6 @@
 ---
 name: figma
-description: Use the Figma MCP server for general Figma workflows (setup, troubleshooting, node inspection, screenshots, metadata, and standard extraction) without cache-first preference. Default for generic Figma requests when the user does not explicitly ask for cache-first, full design-to-code implementation, or detailed extraction deliverables.
+description: "Use the Figma MCP server for general Figma workflows (setup, troubleshooting, node inspection, screenshots, metadata, and standard extraction) without."
 ---
 
 # Figma MCP

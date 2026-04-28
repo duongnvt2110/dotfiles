@@ -1,4 +1,4 @@
 interface:
   display_name: "Claude Skill"
-  short_description: "Use when user asks to leverage claude or claude code to do something (e.g. implement a feature design or review codes..."
+  short_description: "Use when user asks to leverage claude or claude code to do something (e.g."
   default_prompt: "Use $claude-skill to complete this task using its defined workflow and constraints."

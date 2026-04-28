@@ -1,4 +1,4 @@
 interface:
   display_name: "Autonomous Skill"
-  short_description: "Use when user wants to execute long-running tasks that require multiple sessions to complete. This skill manages task..."
+  short_description: "Use when user wants to execute long-running tasks that require multiple sessions to complete."
   default_prompt: "Use $autonomous-skill to complete this task using its defined workflow and constraints."

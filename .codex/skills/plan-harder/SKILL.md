@@ -1,9 +1,9 @@
 ---
 name: plan-harder
-description: >
-  Planning depth modifier, not a standalone default planner.
-  Use only when user explicitly asks to "plan harder", "go deeper", or produce a more rigorous plan.
-  Apply on top of the selected base planning workflow (`planner`, `openspec`, or `spec-kit-skill`).
+description: >-
+  Planning depth modifier, not a standalone default planner. Use only when user
+  explicitly asks to "plan harder", "go deeper", or produce a more rigorous
+  plan.
 ---
 
 # Planner Agent

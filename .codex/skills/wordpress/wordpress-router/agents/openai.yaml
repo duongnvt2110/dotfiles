@@ -1,4 +1,4 @@
 interface:
   display_name: "Wordpress Router"
-  short_description: "Use when the user asks about WordPress codebases (plugins, themes, block themes, Gutenberg blocks, WP core checkouts)..."
+  short_description: "Use when the user asks about WordPress codebases (plugins, themes, block themes, Gutenberg blocks, WP core checkouts)."
   default_prompt: "Use $wordpress-router to complete this task using its defined workflow and constraints."

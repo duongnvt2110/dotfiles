@@ -1,8 +1,7 @@
 ---
 name: "figma-implement-design"
-description: "Specialized non-cache design-to-code workflow for translating Figma nodes into production-ready code with 1:1 visual fidelity. Trigger when the user explicitly asks to implement/build code from Figma specs. Do not trigger for generic Figma MCP setup, inspection-only tasks, cache-first requests, or extraction-only reports."
+description: "Specialized non-cache design-to-code workflow for translating Figma nodes into production-ready code with 1:1 visual fidelity."
 ---
-
 
 # Implement Design
 

@@ -1,13 +1,6 @@
 ---
 name: planner
-description: >
-  Default planning skill for generic implementation planning requests.
-  Create comprehensive, phased implementation plans with sprints and atomic tasks.
-  Use when user says: "make a plan", "create a plan", "plan this out", "plan the implementation",
-  "help me plan", "design a plan", "draft a plan", "write a plan", "outline the steps",
-  "break this down into tasks", "what's the plan for", or any similar planning request.
-  Also triggers on explicit "/planner" or "/plan" commands.
-  Do not take precedence over explicit OpenSpec, Spec-Kit, Phase1 plan-space, or "plan harder" requests.
+description: "Default planning skill for generic implementation planning requests. Create comprehensive, phased implementation plans with sprints and atomic tasks."
 ---
 
 # Planner Agent

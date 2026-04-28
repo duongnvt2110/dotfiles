@@ -1,6 +1,6 @@
 ---
 name: phase1-plan-space
-description: "Specialized Phase 1 plan-space workflow for multi-model plan competition and synthesis-by-diff before implementation. Trigger only when the user explicitly asks for Phase 1 plan-space, competing plans, or synthesis-by-diff workflows. Do not trigger for generic planning requests."
+description: "Specialized Phase 1 plan-space workflow for multi-model plan competition and synthesis-by-diff before implementation."
 ---
 
 # Phase 1 Plan-Space Workflow

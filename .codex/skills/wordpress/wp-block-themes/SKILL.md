@@ -1,6 +1,6 @@
 ---
 name: wp-block-themes
-description: "Use when developing WordPress block themes: theme.json (global settings/styles), templates and template parts, patterns, style variations, and Site Editor troubleshooting (style hierarchy, overrides, caching)."
+description: "Use when developing WordPress block themes: theme.json (global settings/styles), templates and template parts, patterns, style variations, and Site Editor."
 ---
 
 # WP Block Themes

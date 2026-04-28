@@ -1,4 +1,4 @@
 interface:
   display_name: "RFC Writer"
-  short_description: "Draft RFCs for non-trivial technical decisions and produce recommendation-ready proposals."
+  short_description: "Draft and facilitate Request for Comments documents for non-trivial technical changes with multiple viable options."
   default_prompt: "Use $rfc-writer to produce a structured RFC with ranked criteria, alternatives, recommendation, rollout, and risk analysis."

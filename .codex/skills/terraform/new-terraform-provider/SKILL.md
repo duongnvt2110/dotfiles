@@ -1,6 +1,6 @@
 ---
 name: new-terraform-provider
-description: Use this when scaffolding a new Terraform provider.
+description: "Use this when scaffolding a new Terraform provider."
 license: MPL-2.0
 metadata:
   copyright: Copyright IBM Corp. 2026
