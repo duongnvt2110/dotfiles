@@ -1,0 +1,20 @@
+{
+  "extras": [
+    "lazyvim.plugins.extras.lang.ansible",
+    "lazyvim.plugins.extras.lang.git",
+    "lazyvim.plugins.extras.lang.helm",
+    "lazyvim.plugins.extras.lang.lean",
+    "lazyvim.plugins.extras.lang.php",
+    "lazyvim.plugins.extras.lang.python",
+    "lazyvim.plugins.extras.lang.sql",
+    "lazyvim.plugins.extras.lang.toml",
+    "lazyvim.plugins.extras.lsp.neoconf",
+    "lazyvim.plugins.extras.ui.treesitter-context"
+  ],
+  "install_version": 8,
+  "news": {
+    "NEWS.md": "11866"
+  },
+  "version": 8
+}
+
