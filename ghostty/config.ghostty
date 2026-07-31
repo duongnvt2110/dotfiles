@@ -1,0 +1,71 @@
+# Theme
+theme = "Catppuccin Macchiato"
+font-family = "Cascadia Mono NF"
+font-synthetic-style = false
+
+# Custom Shader
+# See https://github.com/sahaj-b/ghostty-cursor-shaders
+custom-shader = shaders/cursor_warp.glsl
+
+# Window
+window-height = 28
+window-width = 100
+window-position-x = 180
+window-position-y = 180
+window-padding-x = 8
+window-padding-y = 8
+window-padding-balance = true
+window-save-state = never
+window-new-tab-position = current
+
+# macOS window appearance
+macos-titlebar-style = tabs
+window-new-tab-position = current
+maximize = true
+window-save-state = always
+
+#Cursor
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
+
+# Quick Terminal
+quick-terminal-position = center
+quick-terminal-animation-duration = 0
+
+# Notifications
+notify-on-command-finish = unfocused
+notify-on-command-finish-action = bell,notify
+notify-on-command-finish-after = 10s
+
+# Misc
+confirm-close-surface = true
+macos-option-as-alt = true
+clipboard-paste-protection = false
+clipboard-paste-bracketed-safe = true
+quick-terminal-size = 70%,70%
+quick-terminal-position = center
+auto-update-channel = stable
+
+# Liquid Glass
+# background-opacity = 0.0
+# background-blur = macos-glass-clear
+
+# Reduce distractions
+mouse-hide-while-typing = true
+
+# aesthetics
+background-opacity = 0.85
+background-blur=16
+background=#000000
+
+# typography
+font-size=12
+font-thicken=true
+font-thicken-strength=1
+adjust-cell-height=1
+
+
+# Keybind 
+keybind = cmd+shift+t=new_tab
+

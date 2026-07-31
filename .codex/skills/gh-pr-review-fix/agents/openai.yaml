@@ -1,0 +1,4 @@
+interface:
+  display_name: "GitHub PR Review Fix"
+  short_description: "Fix GitHub PR review comments"
+  default_prompt: "Use $gh-pr-review-fix to inspect a GitHub PR review, patch the repo, verify the fix, and push the branch update."

@@ -49,8 +49,8 @@ fi
 BREW_CMD=(arch -arm64 brew)
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
-source "$SCRIPT_DIR/scripts/brew-pin-bottles.sh"
-source "$SCRIPT_DIR/scripts/macports-install.sh"
+source "$SCRIPT_DIR/lib/brew-install-bottles.sh"
+source "$SCRIPT_DIR/lib/macports-install.sh"
 
 echo "==> Updating Homebrew"
 "${BREW_CMD[@]}" update

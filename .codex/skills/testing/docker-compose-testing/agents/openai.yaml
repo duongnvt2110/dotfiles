@@ -1,0 +1,4 @@
+interface:
+  display_name: "Docker Compose Testing"
+  short_description: "Create and review Docker Compose test workflows."
+  default_prompt: "Use $docker-compose-testing to design or review tests that must run inside Docker Compose."
