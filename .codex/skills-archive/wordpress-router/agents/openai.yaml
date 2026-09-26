@@ -1,7 +1,0 @@
-interface:
-  display_name: "WordPress Router"
-  short_description: "Explicitly triage a WordPress repository and choose the relevant workflow."
-  default_prompt: "Use $wordpress-router to classify this WordPress repository and identify the right workflow and checks."
-
-policy:
-  allow_implicit_invocation: false

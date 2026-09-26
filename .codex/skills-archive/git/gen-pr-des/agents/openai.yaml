@@ -1,7 +1,0 @@
-interface:
-  display_name: "Gen Pr Des"
-  short_description: "Generate a pull request description from git history and diff data between a base and head ref."
-  default_prompt: "Use $gen-pr-des to complete this task using its defined workflow and constraints."
-
-policy:
-  allow_implicit_invocation: false

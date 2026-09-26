@@ -1,7 +1,0 @@
-interface:
-  display_name: "Phase 1 Plan-Space"
-  short_description: "Specialized Phase 1 plan-space workflow for multi-model plan competition and synthesis-by-diff before implementation."
-  default_prompt: "Use $phase1-plan-space to run multi-model plan competition and synthesis before implementation."
-
-policy:
-  allow_implicit_invocation: false

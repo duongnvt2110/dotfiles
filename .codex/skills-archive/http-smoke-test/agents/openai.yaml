@@ -1,4 +1,0 @@
-interface:
-  display_name: "HTTP Smoke Test"
-  short_description: "Run repository HTTP smoke scenarios from the http/ collection"
-  default_prompt: "Run the repository HTTP smoke tests using the existing http/ collection and local runtime."

@@ -2,6 +2,7 @@
 sessions/**
 # Doc
 doc/
+/my_docs
 
 # ignore everything under .codex
 .codex/**
@@ -10,14 +11,10 @@ doc/
 !.codex/
 !.codex/skills/
 !.codex/skills/**
-!.codex/prompts/
-!.codex/prompts/**
 !.codex/rules/
 !.codex/rules/**
 !.codex/.agent/
 !.codex/.agent/**
-!.codex/policy
-!.codex/policy/**
 !.codex/AGENTS.md
 !.codex/config.toml
 !.codex/hooks.json
@@ -26,5 +23,3 @@ doc/
 !.codex/docs/
 !.codex/docs/codex-scope-guard.md
 !.codex/docs/skill-reduction-plan.md
-!.codex/skills-archive/
-!.codex/skills-archive/**

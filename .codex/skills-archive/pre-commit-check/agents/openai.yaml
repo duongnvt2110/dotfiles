@@ -1,4 +1,0 @@
-interface:
-  display_name: "Pre-commit Check"
-  short_description: "Validate staged changes before committing"
-  default_prompt: "Check the staged changes using the repository workflow before commit; report passes, failures, and blocked checks without committing."

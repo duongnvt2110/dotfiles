@@ -1,7 +1,0 @@
-interface:
-  display_name: "OpenSpec"
-  short_description: "Run an explicit OpenSpec change workflow without competing with generic planning."
-  default_prompt: "Use $openspec for the requested OpenSpec change lifecycle."
-
-policy:
-  allow_implicit_invocation: false

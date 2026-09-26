@@ -1,7 +1,0 @@
-interface:
-  display_name: "ADR Recorder"
-  short_description: "Record finalized architecture decisions as Architecture Decision Records."
-  default_prompt: "Use $adr-recorder to write or update an ADR with status, context, decision, alternatives, consequences, and cross-links."
-
-policy:
-  allow_implicit_invocation: false

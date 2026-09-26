@@ -2,6 +2,16 @@
 
 > **Status:** Historical first-batch plan. The current refactor uses the five-router architecture (`engineering`, `terraform`, `wordpress`, `frontend`, `figma`). The earlier four-change scope lock below is retained as history and is no longer the active migration boundary.
 
+## Update History
+
+Updated: 2026-09-26 12:01
+
+The local `.codex/skills-archive/`, `.codex/policy/`, and `.codex/prompts/`
+directories are intentionally excluded from the shared repository. The archive
+can restore packages from this worktree; on a fresh clone, recover historical
+packages from Git history instead. The directory-layout and tracking steps
+below describe the original plan, not current repository policy.
+
 
 ## Goal
 
