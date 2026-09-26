@@ -32,4 +32,6 @@ link_item() {
 link_item ".agent"
 link_item "prompts"
 link_item "skills"
+link_item "hooks"
+link_item "hooks.json"
 link_item "config.toml"

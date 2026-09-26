@@ -1,4 +1,7 @@
 interface:
   display_name: "Planner"
-  short_description: "Default planning skill for generic implementation planning requests."
-  default_prompt: "Use $planner to complete this task using its defined workflow and constraints."
+  short_description: "Create a repository-grounded, minimal implementation plan with concrete validation."
+  default_prompt: "Use $planner to trace the current code path and produce the smallest execution-ready implementation plan."
+
+policy:
+  allow_implicit_invocation: false

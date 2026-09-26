@@ -1,0 +1,7 @@
+interface:
+  display_name: "Implementation Evidence Gate"
+  short_description: "Trace requirements to code, focused checks, and observed evidence."
+  default_prompt: "Use $implementation-evidence-gate to verify this implementation against its approved requirements."
+
+policy:
+  allow_implicit_invocation: false

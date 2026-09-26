@@ -1,4 +1,0 @@
-interface:
-  display_name: "Tasks"
-  short_description: "Git-backed task graph and agent memory using Beads (bd CLI)."
-  default_prompt: "Use $tasks to complete this task using its defined workflow and constraints."

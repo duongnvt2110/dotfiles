@@ -1,4 +1,7 @@
 interface:
   display_name: "Find Skills"
-  short_description: "Helps users discover and install agent skills when they ask questions like "how do I do X", "find a skill for X", "is."
+  short_description: "Discover and install agent skills for an explicit user request."
   default_prompt: "Use $find-skills to complete this task using its defined workflow and constraints."
+
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Evidence-First Consultant"
+  short_description: "Evidence-backed repository and architecture reviews"
+  default_prompt: "Use $evidence-first-consultant to assess the named repository or plan before recommending changes."
+
+policy:
+  allow_implicit_invocation: false

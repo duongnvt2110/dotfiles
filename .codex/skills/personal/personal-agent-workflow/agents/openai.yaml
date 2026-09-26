@@ -1,0 +1,7 @@
+interface:
+  display_name: "Personal Agent Workflow"
+  short_description: "Apply personal RTK and my_docs documentation conventions."
+  default_prompt: "Use $personal-agent-workflow for my personal RTK and my_docs conventions."
+
+policy:
+  allow_implicit_invocation: false

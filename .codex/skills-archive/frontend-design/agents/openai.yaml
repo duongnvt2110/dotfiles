@@ -1,0 +1,7 @@
+interface:
+  display_name: "Frontend Design"
+  short_description: "Create distinctive, production-grade frontend interfaces with high design quality."
+  default_prompt: "Use $frontend-design to complete this task using its defined workflow and constraints."
+
+policy:
+  allow_implicit_invocation: false

@@ -1,6 +1,6 @@
 ---
 name: "security-best-practices"
-description: "Perform language and framework specific security best-practice reviews and suggest improvements."
+description: "Supporting secure-coding review for language/framework risks. Use for explicit security review or a security-focused pass, not general code review."
 ---
 
 # Security Best Practices
@@ -23,7 +23,7 @@ If you are asked to make a web app which will include both a frontend and backen
 
 If no relevant information is available in the skill's references directory, think a little bit about what you know about the language, the framework, and all well known security best practices for it. If you are unsure you can try to search online for documentation on security best practices.
 
-From there it can operate in a few ways.
+From there it can operate in a few ways. These modes apply only after this skill has been selected because the task has explicit security intent or clearly requests a security-focused pass. Do not turn ordinary implementation, debugging, or code review into a broad security audit.
 
 1. The primary mode is to just use the information to write secure by default code from this point forward. This is useful for starting a new project or when writing new code.
 

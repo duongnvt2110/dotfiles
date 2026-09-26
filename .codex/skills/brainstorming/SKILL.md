@@ -1,112 +1,37 @@
 ---
 name: brainstorming
-description: "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior."
+description: "Manual design exploration for vague or creative engineering work: clarify intent, inspect context, compare approaches, and shape a small design before planning."
+disable-model-invocation: true
 ---
 
-# Brainstorming Ideas Into Designs
+# Brainstorming
 
-## Overview 
+Use this when the user explicitly wants to explore an idea before implementation. It is a collaborative design workflow, not a mandatory gate for every change.
 
-Help turn ideas into fully formed designs and specs through natural collaborative dialogue.
+## Workflow
 
-Start by understanding the current project context, then ask questions one at a time to refine the idea. Once you understand what you're building, present the design and get user approval.
+1. Inspect the repository, relevant docs, and nearby implementation before asking questions.
+2. State the apparent goal, constraints, and unknowns.
+3. Ask only the highest-value unresolved question, one at a time when interaction is useful.
+4. Compare 2-3 materially different approaches when real alternatives exist. Do not manufacture alternatives for a trivial change.
+5. Prefer the smallest design that satisfies the goal and existing repository conventions.
+6. Record unresolved risks and how they would be validated.
 
-<HARD-GATE>
-Do NOT invoke any implementation skill, write any code, scaffold any project, or take any implementation action until you have presented a design and the user has approved it. This applies to EVERY project regardless of perceived simplicity.
-</HARD-GATE>
+## Output
 
-## Anti-Pattern: "This Is Too Simple To Need A Design"
+Produce only what the task needs:
 
-Every project goes through this process. A todo list, a single-function utility, a config change — all of them. "Simple" projects are where unexamined assumptions cause the most wasted work. The design can be short (a few sentences for truly simple projects), but you MUST present it and get approval.
+- problem / desired outcome;
+- observed constraints;
+- viable approaches and meaningful trade-offs;
+- proposed design;
+- open questions or proof needed.
 
-## Decision Boundary
+If the user asked only to brainstorm, stop at the design. If they also want a plan, continue with `$planner`. Do not force a commit, ADR, RFC, or implementation handoff for a small discussion.
 
-- Brainstorming explores options only and cannot produce a binding architecture
-  decision.
-- If convergence and comparison are needed, transition to `rfc-writer`.
-- Final decision status must be recorded by `adr-recorder`.
+## Principles
 
-## RFC Intake Output
-
-When handing off to `rfc-writer`, provide this package:
-
-- Problem statement in one paragraph
-- Constraints and success criteria
-- Candidate options and non-goals
-- Open questions that still need evidence
-
-## Checklist
-
-You MUST create a task for each of these items and complete them in order:
-
-1. **Explore project context** — check files, docs, recent commits
-2. **Ask clarifying questions** — one at a time, understand purpose/constraints/success criteria
-3. **Propose 2-3 approaches** — with trade-offs and your recommendation
-4. **Present design** — in sections scaled to their complexity, get user approval after each section
-5. **Write design doc** — save to `docs/plans/YYYY-MM-DD-<topic>-design.md` and commit
-6. **Transition to implementation** — invoke writing-plans skill to create implementation plan
-
-## Process Flow
-
-```dot
-digraph brainstorming {
-    "Explore project context" [shape=box];
-    "Ask clarifying questions" [shape=box];
-    "Propose 2-3 approaches" [shape=box];
-    "Present design sections" [shape=box];
-    "User approves design?" [shape=diamond];
-    "Write design doc" [shape=box];
-    "Invoke writing-plans skill" [shape=doublecircle];
-
-    "Explore project context" -> "Ask clarifying questions";
-    "Ask clarifying questions" -> "Propose 2-3 approaches";
-    "Propose 2-3 approaches" -> "Present design sections";
-    "Present design sections" -> "User approves design?";
-    "User approves design?" -> "Present design sections" [label="no, revise"];
-    "User approves design?" -> "Write design doc" [label="yes"];
-    "Write design doc" -> "Invoke writing-plans skill";
-}
-```
-
-**The terminal state is invoking writing-plans.** Do NOT invoke frontend-design, mcp-builder, or any other implementation skill. The ONLY skill you invoke after brainstorming is writing-plans.
-
-## The Process
-
-**Understanding the idea:**
-- Check out the current project state first (files, docs, recent commits)
-- Ask questions one at a time to refine the idea
-- Prefer multiple choice questions when possible, but open-ended is fine too
-- Only one question per message - if a topic needs more exploration, break it into multiple questions
-- Focus on understanding: purpose, constraints, success criteria
-
-**Exploring approaches:**
-- Propose 2-3 different approaches with trade-offs
-- Present options conversationally with your recommendation and reasoning
-- Lead with your recommended option and explain why
-
-**Presenting the design:**
-- Once you believe you understand what you're building, present the design
-- Scale each section to its complexity: a few sentences if straightforward, up to 200-300 words if nuanced
-- Ask after each section whether it looks right so far
-- Cover: architecture, components, data flow, error handling, testing
-- Be ready to go back and clarify if something doesn't make sense
-
-## After the Design
-
-**Documentation:**
-- Write the validated design to `docs/plans/YYYY-MM-DD-<topic>-design.md`
-- Use elements-of-style:writing-clearly-and-concisely skill if available
-- Commit the design document to git
-
-**Implementation:**
-- Invoke the writing-plans skill to create a detailed implementation plan
-- Do NOT invoke any other skill. writing-plans is the next step.
-
-## Key Principles
-
-- **One question at a time** - Don't overwhelm with multiple questions
-- **Multiple choice preferred** - Easier to answer than open-ended when possible
-- **YAGNI ruthlessly** - Remove unnecessary features from all designs
-- **Explore alternatives** - Always propose 2-3 approaches before settling
-- **Incremental validation** - Present design, get approval before moving on
-- **Be flexible** - Go back and clarify when something doesn't make sense
+- Repository first; do not design from assumptions that the code can answer.
+- Explore broadly enough to find the real options, then implement narrowly.
+- YAGNI: no extra services, abstractions, or framework changes without a demonstrated need.
+- Preserve user choices; recommendations are proposals, not binding architecture decisions.

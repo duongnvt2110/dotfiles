@@ -1,0 +1,7 @@
+interface:
+  display_name: "Spec Kit Skill"
+  short_description: "GitHub Spec-Kit integration for constitution-based spec-driven development."
+  default_prompt: "Use $spec-kit-skill to complete this task using its defined workflow and constraints."
+
+policy:
+  allow_implicit_invocation: false

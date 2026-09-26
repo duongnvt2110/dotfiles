@@ -21,7 +21,7 @@ export CONTEXT7_API_KEY="your-context7-key"
 2) Use a local `.env` file (per-repo):
 
 ```bash
-cp skills/context7/.env.example .env
+cp <this-skill-dir>/.env.example .env
 set -a; source .env; set +a
 ```
 
@@ -30,12 +30,12 @@ set -a; source .env; set +a
 ### 1. Search for the library
 
 ```bash
-python3 ~/.codex/skills/context7/scripts/context7.py search "<library-name>"
+python3 <this-skill-dir>/scripts/context7.py search "<library-name>"
 ```
 
 Example:
 ```bash
-python3 ~/.codex/skills/context7/scripts/context7.py search "next.js"
+python3 <this-skill-dir>/scripts/context7.py search "next.js"
 ```
 
 Returns library metadata including the `id` field needed for step 2.
@@ -43,12 +43,12 @@ Returns library metadata including the `id` field needed for step 2.
 ### 2. Fetch documentation context
 
 ```bash
-python3 ~/.codex/skills/context7/scripts/context7.py context "<library-id>" "<query>"
+python3 <this-skill-dir>/scripts/context7.py context "<library-id>" "<query>"
 ```
 
 Example:
 ```bash
-python3 ~/.codex/skills/context7/scripts/context7.py context "/vercel/next.js" "app router middleware"
+python3 <this-skill-dir>/scripts/context7.py context "/vercel/next.js" "app router middleware"
 ```
 
 Options:

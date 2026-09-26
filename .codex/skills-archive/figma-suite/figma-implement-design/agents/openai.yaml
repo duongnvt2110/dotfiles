@@ -1,0 +1,17 @@
+interface:
+  display_name: "Figma Implement Design"
+  short_description: "Specialized non-cache design-to-code workflow for translating Figma nodes into production-ready code with 1:1 visual."
+  icon_small: "./assets/figma-small.svg"
+  icon_large: "./assets/figma.png"
+  default_prompt: "Implement this Figma design in this codebase, matching layout, states, and responsive behavior."
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "figma"
+      description: "Figma MCP server"
+      transport: "streamable_http"
+      url: "https://mcp.figma.com/mcp"
+
+policy:
+  allow_implicit_invocation: false

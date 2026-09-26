@@ -1,0 +1,42 @@
+{
+  "description": "Global Codex scope guard: broad exploration, narrow implementation.",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/bin/sh \"$HOME/.codex/hooks/scope-guard.sh\" UserPromptSubmit",
+            "timeout": 3,
+            "statusMessage": "Applying scope discipline"
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/bin/sh \"$HOME/.codex/hooks/scope-guard.sh\" SubagentStart",
+            "timeout": 3,
+            "statusMessage": "Applying scope discipline"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "^(apply_patch|Write|Edit)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/bin/sh \"$HOME/.codex/hooks/scope-guard.sh\" PreToolUse",
+            "timeout": 3,
+            "statusMessage": "Checking edit scope"
+          }
+        ]
+      }
+    ]
+  }
+}

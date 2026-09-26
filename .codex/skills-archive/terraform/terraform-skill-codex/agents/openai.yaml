@@ -1,0 +1,7 @@
+interface:
+  display_name: "Terraform Skill for Codex"
+  short_description: "Route broad Terraform/OpenTofu work when no narrower specialist applies."
+  default_prompt: "Use $terraform-skill-codex to design and validate a production-ready Terraform/OpenTofu module with tests and CI checks."
+
+policy:
+  allow_implicit_invocation: false

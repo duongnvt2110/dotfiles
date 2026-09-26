@@ -1,0 +1,7 @@
+interface:
+  display_name: "Repository Agent Setup"
+  short_description: "Create verified repository AGENTS.md rules"
+  default_prompt: "Use $repository-agent-setup to create or refresh this repository's AGENTS.md."
+
+policy:
+  allow_implicit_invocation: true

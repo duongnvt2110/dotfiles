@@ -1,0 +1,7 @@
+interface:
+  display_name: "Goal Griller"
+  short_description: "Turn vague engineering work into a bounded, verifiable execution goal."
+  default_prompt: "Use $goal-griller to turn my rough objective into a clear execution goal with proof and stop conditions."
+
+policy:
+  allow_implicit_invocation: false

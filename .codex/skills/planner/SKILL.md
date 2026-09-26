@@ -1,168 +1,43 @@
 ---
 name: planner
-description: "Default planning skill for generic implementation planning requests. Create comprehensive, phased implementation plans with sprints and atomic tasks."
+description: "Manual repository-first planning for features, bugs, and refactors. Produce the smallest execution-ready plan with concrete code paths and checks."
+disable-model-invocation: true
 ---
 
-# Planner Agent
+# Planner
 
-Create detailed, phased implementation plans for bugs, features, or tasks.
+Use this when the user explicitly wants an implementation plan rather than implementation.
 
-## Routing Contract
+## Core Rule
 
-- Primary role: default planner for generic planning prompts.
-- Must yield when user explicitly requests: `openspec`, `spec-kit`, `phase1-plan-space`, or `plan-harder`.
-- Must yield when context clearly indicates:
-  - Greenfield constitution workflow (`.specify`, `specify` CLI) -> `spec-kit-skill`
-  - Brownfield spec-change workflow (`openspec`, `/opsx:*`) -> `openspec`
-  - Multi-plan competition/synthesis -> `phase1-plan-space`
-- Handoff rule: if spec artifacts are required, hand off to `openspec` or `spec-kit-skill`, then resume for execution task decomposition.
+**Explore broadly. Prove necessity. Implement narrowly.**
 
-## Decision Boundary
+Repository behavior is the primary planning evidence. Requirements and approved specs define the contract; the repository tells you how that contract can be implemented.
 
-- Do not finalize architecture decisions in this skill.
-- If multiple viable options require structured comparison, hand off to
-  `rfc-writer`.
-- If a decision is already approved and needs authoritative recording, hand off
-  to `adr-recorder`.
-- Recommendations in plans are non-binding until captured by `adr-recorder`.
+## Workflow
 
-## Process
+1. Read the relevant repository instructions and user-named requirements.
+2. Trace the current end-to-end path before proposing changes.
+3. Reuse existing models, layers, patterns, and transaction boundaries where they already satisfy the need.
+4. Identify only confirmed gaps between required behavior and reachable implementation.
+5. Ask questions only for material ambiguity that cannot be resolved from the repository or provided requirements.
+6. Produce the smallest ordered set of implementation tasks needed to close those gaps.
+7. Attach a focused validation method to every behavior-changing task.
+8. Run a final gotcha pass for stale data, concurrency, failure handling, migrations, compatibility, and deployment only where relevant.
 
-### Phase 0: Research
+## Plan Shape
 
-1. **Investigate the codebase:**
-   - Architecture and patterns
-   - Similar existing implementations
-   - Dependencies and frameworks
-   - Related components
+For each task include:
 
-2. **Analyze the request:**
-   - Core requirements
-   - Challenges & edge cases
-   - Security/performance/UX considerations
+- **Goal** — behavior being added/fixed;
+- **Code path** — concrete files/functions/layers when known;
+- **Change** — smallest sufficient implementation;
+- **Why needed** — evidence or requirement proving necessity;
+- **Validation** — exact test/check that proves it.
 
-### Phase 1: Clarify Requirements
+Use phases only when ordering genuinely matters. Do not create sprints, RFCs, ADRs, new abstractions, or architecture work merely to make the plan look comprehensive.
 
-Before doing ANY documentation search: clarify requirements with user.
-This will narrow and aid you in finding the right docs.
+## Boundaries
 
-Think of 5-10 questions that will help you generate the best plan possible.
-
-Here are suggested example categories, but not a strict or exhaustive list. You may ask anything helpful. Use best judgement & prioritize ambiguity and risk reduction:
-1. Goals & success criteria
-2. Scope & non‑goals
-3. Users & core workflows
-4. Platforms & environments
-5. Tech constraints
-6. Data & integrations
-7. Auth & permissions
-8. Performance & reliability
-9. Testing & validation
-10. Ask any helpful question
-
-### Phase 2: Retrieve Documentation
-
-When the plan involves any external library, API, framework, or service, use the Context7 skill to fetch the latest official docs before drafting tasks. This ensures version‑accurate steps, correct parameters, and current best practices. If no external dependencies apply, skip this phase.
-
-### Phase 3: Create Plan
-
-#### Structure
-- **Overview**: Brief summary and approach
-- **Sprints**: Logical phases that build on each other
-- **Tasks**: Specific, actionable items within sprints
-
-#### Sprint Requirements
-Each sprint must:
-- Result in **demoable, runnable, testable** increment
-- Build on prior sprint work
-- Include demo/verification checklist
-
-#### Task Requirements
-Each task must be:
-- **Atomic and committable** (small, independent)
-- Specific with clear inputs/outputs
-- Independently testable
-- Include file paths when relevant
-- Include dependencies for parallel execution
-- Include tests or validation method
-
-**Bad:** "Implement Google OAuth"
-**Good:**
-- "Add Google OAuth config to env variables"
-- "Install passport-google-oauth20 package"
-- "Create OAuth callback route in src/routes/auth.ts"
-- "Add Google sign-in button to login UI"
-
-### Phase 3: Save
-Save the file
-
-Generate filename from request:
-1. Extract keywords
-2. Convert to kebab-case
-3. Add `-plan.md` suffix
-
-Examples:
-- "fix xyz bug" → `xyz-bug-plan.md`
-
-### Phase 4: Gotchas
-
-AFTER it is saved. Identify potential issues & edge cases in plan. Address proactively. Where could smth go wrong? What about the plan is ambiguous? Missing step, dependency, or pitfall?
-
-If any gotchas found, stop & ask up to 3 more questions. (either w/ request_user_input or directly)
-
-Refine the plan if any additional useful info is provided.
-
-## Plan Template
-
-```markdown
-# Plan: [Task Name]
-
-**Generated**: [Date]
-**Estimated Complexity**: [Low/Medium/High]
-
-## Overview
-[Summary of task and approach]
-
-## Prerequisites
-- [Dependencies or requirements]
-- [Tools, libraries, access needed]
-
-## Sprint 1: [Name]
-**Goal**: [What this accomplishes]
-**Demo/Validation**:
-- [How to run/demo]
-- [What to verify]
-
-### Task 1.1: [Name]
-- **Location**: [File paths]
-- **Description**: [What to do]
-- **Dependencies**: [Previous tasks]
-- **Acceptance Criteria**:
-  - [Specific criteria]
-- **Validation**:
-  - [Tests or verification]
-
-### Task 1.2: [Name]
-[...]
-
-## Sprint 2: [Name]
-[...]
-
-## Testing Strategy
-- [How to test]
-- [What to verify per sprint]
-
-## Potential Risks & Gotchas
-- [What could go wrong]
-- [Mitigation strategies]
-
-## Rollback Plan
-- [How to undo if needed]
-```
-
-## Important
-
-- Think about full lifecycle: implementation, testing, deployment
-- Consider non-functional requirements
-- Show user summary and file path when done
-- Do NOT implement - only create the plan
+- For Terraform, WordPress, or frontend work, keep the domain skill primary and use this planning method as supporting procedure.
+- Do not implement unless the user separately asks for implementation.

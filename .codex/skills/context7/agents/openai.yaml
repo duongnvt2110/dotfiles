@@ -2,3 +2,6 @@ interface:
   display_name: "Context7"
   short_description: "Fetch up-to-date library documentation via Context7 API."
   default_prompt: "Use $context7 to complete this task using its defined workflow and constraints."
+
+policy:
+  allow_implicit_invocation: true

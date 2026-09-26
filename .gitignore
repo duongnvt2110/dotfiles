@@ -20,3 +20,11 @@ doc/
 !.codex/policy/**
 !.codex/AGENTS.md
 !.codex/config.toml
+!.codex/hooks.json
+!.codex/hooks/
+!.codex/hooks/**
+!.codex/docs/
+!.codex/docs/codex-scope-guard.md
+!.codex/docs/skill-reduction-plan.md
+!.codex/skills-archive/
+!.codex/skills-archive/**

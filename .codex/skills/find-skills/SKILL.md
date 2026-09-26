@@ -1,9 +1,7 @@
 ---
 name: find-skills
-description: >-
-  Helps users discover and install agent skills when they ask questions like
-  "how do I do X", "find a skill for X", "is there a skill that can...", or
-  express.
+description: "Manual skill discovery and installation workflow for explicit requests to find, compare, or install reusable agent skills."
+disable-model-invocation: true
 ---
 
 # Find Skills

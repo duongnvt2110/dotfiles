@@ -1,0 +1,7 @@
+interface:
+  display_name: "Figma Cache Fallback"
+  short_description: "Recover Figma context or assets when MCP access is throttled."
+  default_prompt: "Use $figma-cache-fallback only for Figma cache or throttling recovery."
+
+policy:
+  allow_implicit_invocation: false
