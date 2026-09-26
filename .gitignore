@@ -16,10 +16,11 @@ doc/
 !.codex/.agent/
 !.codex/.agent/**
 !.codex/AGENTS.md
-!.codex/config.toml
 !.codex/hooks.json
 !.codex/hooks/
 !.codex/hooks/**
 !.codex/docs/
 !.codex/docs/codex-scope-guard.md
 !.codex/docs/skill-reduction-plan.md
+.codex/rules/default.rules
+.codex/rules/global.md

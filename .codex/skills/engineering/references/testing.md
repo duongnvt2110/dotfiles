@@ -17,6 +17,46 @@ Choose the narrowest test level that can prove the requested behavior. Testing i
 5. Prove the test actually executes the intended code path and can fail for the targeted regression.
 6. Run the narrowest focused test first, then broader checks only when useful.
 
+## Test authoring gate
+
+Before adding or changing a test, establish:
+
+1. What observable behavior, invariant, or contract does this test protect?
+2. What credible regression would make this test fail?
+3. Does existing coverage already prove the same contract?
+   - If yes, extend the strongest existing owner-boundary test instead of replaying the same behavior at another layer.
+4. Would the test require production-only exports, wrappers, flags, dependency seams, or other code that no production caller needs?
+   - If yes, prefer testing through the real observable boundary.
+
+Avoid tests that primarily:
+
+- assert private implementation details rather than behavior;
+- duplicate stronger integration, contract, or end-to-end coverage;
+- mirror production constants or control flow;
+- reproduce expected values by reusing the implementation under test;
+- mock the behavior being asserted;
+- exist only to increase coverage;
+- require test-only production APIs without a demonstrated production need.
+
+A regression test should, when practical:
+
+- fail against the pre-fix behavior for the intended reason;
+- pass after the fix;
+- live at the strongest boundary that owns the behavior.
+
+## Existing-test changes
+
+Do not modify an existing test merely to make the implementation pass.
+
+First determine which case applies:
+
+- the approved requirement changed -> the test may be stale; update it to the new contract;
+- the implementation violates the current contract -> fix production code;
+- the test is coupled to an implementation detail -> rewrite it toward observable behavior without weakening the contract;
+- the applicable contract is unclear -> report the conflict and resolve the source of truth before changing either side.
+
+Passing tests are evidence, not permission to weaken requirements or preserve obsolete behavior.
+
 ## Boundaries
 
 - When runtime API verification should execute an existing `.http` collection, load `http-smoke-testing.md`.

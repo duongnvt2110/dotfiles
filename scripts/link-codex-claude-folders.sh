@@ -9,10 +9,12 @@ Creates per-folder symlinks from this repo into:
   ~/.codex/<child>  -> <repo>/.codex/<child>
   ~/.claude/<child> -> <repo>/.claude/<child>
 
+Codex skills are managed separately by scripts/link-codex.sh.
+
 Existing target folders are kept by default (no replace).
 
 Options:
-  --force   Remove existing target folder before linking.
+  --force   Replace existing target before linking (Codex targets are backed up).
   --backup  Move existing target folder to *.bak-YYYYMMDD-HHMMSS before linking.
 USAGE
 }
@@ -40,6 +42,11 @@ link_children() {
     return 1
   fi
 
+  if [[ "$src_root" == "$repo_root/.codex" && -L "$dst_root" ]]; then
+    echo "Refusing to modify Codex paths through symlinked root: $dst_root" >&2
+    return 1
+  fi
+
   mkdir -p "$dst_root"
 
   local child
@@ -47,10 +54,23 @@ link_children() {
     [[ -e "$child" ]] || continue
     local name
     name="$(basename "$child")"
+    if [[ "$src_root" == "$repo_root/.codex" ]]; then
+      case "$name" in
+        skills)
+          echo "Skipped ~/.codex/skills; run scripts/link-codex.sh to link custom skills safely"
+          continue
+          ;;
+        AGENTS.md|docs|hooks|hooks.json) ;;
+        *)
+          echo "Skipped Codex runtime/local path: $name"
+          continue
+          ;;
+      esac
+    fi
     local dst="$dst_root/$name"
 
     if [[ -e "$dst" || -L "$dst" ]]; then
-      if $backup; then
+      if $backup || { $force && [[ "$src_root" == "$repo_root/.codex" ]]; }; then
         local ts
         ts="$(date +%Y%m%d-%H%M%S)"
         local backup_path="${dst}.bak-${ts}"

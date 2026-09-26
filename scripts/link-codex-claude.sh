@@ -5,9 +5,10 @@ usage() {
   cat <<'USAGE'
 Usage: link-codex-claude.sh [--force] [--backup]
 
-Creates symlinks:
-  ~/.codex  -> <repo>/.codex
+Creates a symlink:
   ~/.claude -> <repo>/.claude
+
+Use scripts/link-codex.sh for Codex. This script leaves ~/.codex runtime-owned.
 
 Options:
   --force   Remove existing targets before linking.
@@ -59,5 +60,4 @@ link_one() {
   echo "Linked $dst -> $src"
 }
 
-link_one "$repo_root/.codex" "$HOME/.codex"
 link_one "$repo_root/.claude" "$HOME/.claude"

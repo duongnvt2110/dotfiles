@@ -1,5 +1,5 @@
 {
-  "description": "Global Codex scope guard: broad exploration, narrow implementation.",
+  "description": "Personal Codex lifecycle hooks.",
   "hooks": {
     "UserPromptSubmit": [
       {

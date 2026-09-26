@@ -1,0 +1,7 @@
+interface:
+  display_name: "Grin Codex Review"
+  short_description: "Verify findings; report fixes only when authorized."
+  default_prompt: "Use $grin-codex-review to evaluate these review findings against the Grin repository."
+
+policy:
+  allow_implicit_invocation: true

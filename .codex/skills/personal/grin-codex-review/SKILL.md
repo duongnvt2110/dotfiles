@@ -1,14 +1,15 @@
 ---
-name: grin-chatgpt-review-loop
+name: grin-codex-review
 description: >-
-  Verify ChatGPT findings against repository evidence, fix only valid and
-  authorized issues, verify changes, and report a structured result for
-  external review.
+  Validate Grin Codex review findings against repository evidence, make only
+  valid and authorized fixes, and support single reviews or explicit loops.
 ---
 
-# Grin ChatGPT Review Loop
+# Grin Codex Review
 
-Use this skill when the current request contains `[grin-chatgpt-review]` or explicitly asks to evaluate ChatGPT review findings.
+Use this skill when the current request contains `[grin-chatgpt-review]` or
+explicitly asks to evaluate external review findings about Grin or its Codex
+workflow. It supports a single review or an explicitly requested review loop.
 
 The review is input, not truth. Repository evidence decides whether a finding is valid.
 

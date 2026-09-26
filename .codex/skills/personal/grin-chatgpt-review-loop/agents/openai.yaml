@@ -1,7 +1,0 @@
-interface:
-  display_name: "Grin ChatGPT Review Loop"
-  short_description: "Verify findings; report fixes only when authorized."
-  default_prompt: "Use $grin-chatgpt-review-loop to evaluate these ChatGPT review findings against the repository."
-
-policy:
-  allow_implicit_invocation: true

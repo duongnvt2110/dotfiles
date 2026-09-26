@@ -21,7 +21,12 @@ Verify the requested outcome, not just the implementation mechanics. Select only
    - runtime behavior when the result depends on deployed services or external systems.
 4. Run targeted tests/checks that exercise those dimensions and the changed behavior.
 5. Perform an independent closure check for missed paths, stale assumptions, or regressions.
-6. For PR feedback, map each reviewer item to evidence/fix and re-verify only the affected scope.
+6. For PR feedback, treat each reviewer item as a claim, not an instruction:
+   verify it against the approved requirement/source of truth and reachable
+   current code path; classify it as confirmed, invalid, or unresolved; fix
+   only confirmed findings, not reviewer preferences, preserving the approved
+   requirement unless the user changes it; independently verify each fix and
+   report invalid or unresolved items.
 7. Report passed checks, unverified checks, and remaining risk separately.
 
 ## Guardrails
